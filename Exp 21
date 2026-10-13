@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    printf("Plaintext block is complete.\n");
+    printf("A full padding block can indicate message length\n");
+    printf("and distinguish complete data from padded data.\n");
+    printf("Use an unambiguous padding scheme during decryption.\n");
+    return 0;
+}
