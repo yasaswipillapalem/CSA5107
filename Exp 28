@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+long long power(int a,int x,int q) {
+    long long r=1;
+    while(x--) r=(r*a)%q;
+    return r;
+}
+
+int main() {
+    int q=23, a=5, x=6, y=15;
+    long long A=power(a,x,q);
+    long long B=power(a,y,q);
+
+    printf("Alice public value: %lld\n",A);
+    printf("Bob public value: %lld\n",B);
+    printf("Alice shared key: %lld\n",power(B,x,q));
+    printf("Bob shared key: %lld\n",power(A,y,q));
+    return 0;
+}
