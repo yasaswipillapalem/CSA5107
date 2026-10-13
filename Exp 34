@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    int block=8, length=16;
+    int padding=block-(length%block);
+
+    if(padding==0) padding=block;
+
+    printf("Plaintext length: %d bytes\n",length);
+    printf("Block size: %d bytes\n",block);
+    printf("Padding required: %d bytes\n",padding);
+    printf("Full padding block helps identify the original length.\n");
+    return 0;
+}
