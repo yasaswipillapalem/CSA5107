@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int gcd(int a,int b) {
+    while(b) {
+        int t=b;
+        b=a%b;
+        a=t;
+    }
+    return a;
+}
+
+int main() {
+    int n=55, message=15;
+    int g=gcd(n,message);
+
+    printf("n = %d\n",n);
+    printf("Message block = %d\n",message);
+    printf("GCD = %d\n",g);
+
+    if(g>1 && g<n)
+        printf("A nontrivial factor of n is revealed.\n");
+    else
+        printf("No nontrivial factor revealed.\n");
+
+    return 0;
+}
