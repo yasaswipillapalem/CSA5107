@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int p=59,q=61,n=3599;
+    int phi=(p-1)*(q-1);
+    int e=31,d=0,k;
+
+    for(k=1;;k++)
+        if((k*phi+1)%e==0) {
+            d=(k*phi+1)/e;
+            break;
+        }
+
+    printf("p = %d, q = %d\n",p,q);
+    printf("n = %d\n",n);
+    printf("phi(n) = %d\n",phi);
+    printf("Public exponent = %d\n",e);
+    printf("Private exponent = %d\n",d);
+    return 0;
+}
