@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    printf("CBC-MAC demonstration\n");
+    printf("One-block message: X\n");
+    printf("Tag: T = E(K, X)\n");
+    printf("Two-block message: X || (X XOR T)\n");
+    printf("Its final CBC-MAC can equal T.\n");
+    printf("Use proper message-length protection or CMAC.\n");
+    return 0;
+}
