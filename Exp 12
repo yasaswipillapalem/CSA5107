@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    int a[2][2] = {{9,4},{5,7}};
+    int i, x, y;
+
+    printf("Enter plaintext (even letters): ");
+    scanf("%99s", s);
+
+    for (i = 0; s[i] && s[i+1]; i += 2) {
+        x = toupper(s[i]) - 'A';
+        y = toupper(s[i+1]) - 'A';
+
+        printf("%c%c",
+          (a[0][0]*x+a[0][1]*y)%26+'A',
+          (a[1][0]*x+a[1][1]*y)%26+'A');
+    }
+    printf("\n");
+    return 0;
+}
