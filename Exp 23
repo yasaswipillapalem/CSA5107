@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int p[]={1,2,4}, key[]={3,6,2};
+    int i;
+
+    printf("CTR mode XOR demonstration:\n");
+    for(i=0;i<3;i++)
+        printf("%d ",p[i]^key[i]);
+
+    printf("\n");
+    return 0;
+}
