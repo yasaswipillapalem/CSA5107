@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main() {
+    printf("Data Encryption Standard (DES)\n");
+    printf("Block size: 64 bits\n");
+    printf("Effective key size: 56 bits\n");
+    printf("Encryption and decryption use the same round structure.\n");
+    printf("DES is insecure for modern applications.\n");
+    return 0;
+}
