@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main() {
+    printf("Hill cipher known-plaintext attack\n");
+    printf("1. Collect plaintext-ciphertext pairs.\n");
+    printf("2. Convert pairs into matrices modulo 26.\n");
+    printf("3. Invert the plaintext matrix modulo 26.\n");
+    printf("4. Recover key K = C * inverse(P) mod 26.\n");
+    return 0;
+}
