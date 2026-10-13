@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    int p[2][2] = {{7,4},{11,15}};
+    int c[2][2] = {{8,7},{3,19}};
+
+    printf("Plaintext and ciphertext pairs loaded.\n");
+    printf("Use matrix inversion modulo 26 to recover key.\n");
+    printf("A key is recoverable only if the plaintext matrix\n");
+    printf("is invertible modulo 26.\n");
+    return 0;
+}
