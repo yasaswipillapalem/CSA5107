@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[500];
+    int k, i;
+
+    printf("Enter ciphertext: ");
+    fgets(s,sizeof(s),stdin);
+
+    for(k=0;k<26;k++) {
+        printf("Key %d: ",k);
+        for(i=0;s[i];i++)
+            if(isalpha(s[i]))
+                putchar((toupper(s[i])-'A'-k+26)%26+'A');
+            else putchar(s[i]);
+        printf("\n");
+    }
+    return 0;
+}
