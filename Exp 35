@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char p[]="SENDMOREMONEY";
+    int key[]={9,0,1,7,23,15,21,14,11,11,2,8,9};
+    int i;
+
+    printf("Ciphertext: ");
+    for(i=0;p[i];i++)
+        putchar((p[i]-'A'+key[i])%26+'A');
+
+    printf("\n");
+    return 0;
+}
