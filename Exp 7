@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[500];
+    char cipher[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char plain[]  = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    int i, j;
+
+    printf("Enter ciphertext: ");
+    fgets(s, sizeof(s), stdin);
+
+    for (i = 0; s[i]; i++) {
+        if (isalpha(s[i])) {
+            int upper = isupper(s[i]);
+            char ch = toupper(s[i]);
+            for (j = 0; j < 26; j++)
+                if (plain[j] == ch) break;
+            if (j < 26)
+                s[i] = upper ? cipher[j] : tolower(cipher[j]);
+        }
+    }
+
+    printf("Decrypted text: %s", s);
+    return 0;
+}
