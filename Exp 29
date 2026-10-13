@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int rate=1024;
+    int capacity=1600-rate;
+
+    printf("SHA-3 state size: 1600 bits\n");
+    printf("Block size: %d bits\n",rate);
+    printf("Capacity: %d bits\n",capacity);
+    printf("Capacity lanes: %d\n",capacity/64);
+    printf("After XOR of the first block, capacity lanes remain zero.\n");
+    return 0;
+}
