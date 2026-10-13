@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main() {
+    printf("DSA uses a per-signature nonce k.\n");
+    printf("Different secure nonces generally produce different signatures.\n");
+    printf("Reusing k can reveal the private signing key.\n");
+    printf("RSA signatures may be deterministic or randomized,\n");
+    printf("depending on the signature scheme.\n");
+    return 0;
+}
