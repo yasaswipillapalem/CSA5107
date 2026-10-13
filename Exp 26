@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    printf("Bob's private key is leaked.\n");
+    printf("Generating new keys with the same modulus is unsafe.\n");
+    printf("An attacker may factor the modulus or recover the key.\n");
+    printf("Generate a new modulus and a new key pair.\n");
+    return 0;
+}
