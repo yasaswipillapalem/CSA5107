@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    char key[] = "CIPHER";
+    char map[27];
+    int used[26] = {0}, i, j, n = 0;
+
+    for (i = 0; key[i]; i++) {
+        char c = toupper(key[i]);
+        if (!used[c-'A']) {
+            map[n++] = c;
+            used[c-'A'] = 1;
+        }
+    }
+
+    for (i = 0; i < 26; i++)
+        if (!used[i]) map[n++] = 'A' + i;
+
+    printf("Enter plaintext: ");
+    fgets(s, sizeof(s), stdin);
+
+    for (i = 0; s[i]; i++) {
+        if (isalpha(s[i])) {
+            int x = toupper(s[i]) - 'A';
+            s[i] = isupper(s[i]) ? map[x] : tolower(map[x]);
+        }
+    }
+
+    printf("Ciphertext: %s", s);
+    return 0;
+}
