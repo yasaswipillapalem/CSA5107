@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    char key[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    int i, x;
+
+    printf("Enter plaintext: ");
+    fgets(s, sizeof(s), stdin);
+
+    for (i = 0; s[i]; i++) {
+        if (isalpha(s[i])) {
+            x = toupper(s[i]) - 'A';
+            s[i] = islower(s[i]) ?
+                tolower(key[x]) : key[x];
+        }
+    }
+
+    printf("Ciphertext: %s", s);
+    return 0;
+}
