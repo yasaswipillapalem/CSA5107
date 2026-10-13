@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    printf("Encrypting individual letters with RSA is insecure.\n");
+    printf("Each letter has a small set of possible values.\n");
+    printf("An attacker can encrypt all 26 letters and compare.\n");
+    printf("Use randomized RSA-OAEP for suitable applications.\n");
+    return 0;
+}
