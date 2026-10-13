@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    int a, b, i;
+
+    printf("Enter plaintext: ");
+    fgets(s, sizeof(s), stdin);
+    printf("Enter a and b: ");
+    scanf("%d%d", &a, &b);
+
+    a = (a % 26 + 26) % 26;
+    b = (b % 26 + 26) % 26;
+
+    int valid = 0;
+    for (i = 1; i < 26; i++)
+        if ((a * i) % 26 == 1) valid = 1;
+
+    if (!valid) {
+        printf("Invalid a: choose a coprime to 26.\n");
+        return 0;
+    }
+
+    for (i = 0; s[i]; i++) {
+        if (isalpha(s[i])) {
+            char base = isupper(s[i]) ? 'A' : 'a';
+            s[i] = (a * (s[i] - base) + b) % 26 + base;
+        }
+    }
+
+    printf("Ciphertext: %s", s);
+    return 0;
+}
