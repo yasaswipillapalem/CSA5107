@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    char text[]="HELLO";
+    int a=5,b=8,i;
+
+    printf("Plaintext: %s\n",text);
+    printf("Ciphertext: ");
+
+    for(i=0;text[i];i++)
+        putchar((a*(text[i]-'A')+b)%26+'A');
+
+    printf("\n");
+    printf("Valid a values must be coprime to 26.\n");
+    return 0;
+}
