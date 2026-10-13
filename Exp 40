@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[]="ITSSG";
+    int f[26]={0},i;
+
+    for(i=0;s[i];i++)
+        if(isalpha(s[i]))
+            f[toupper(s[i])-'A']++;
+
+    printf("Ciphertext: %s\n",s);
+    printf("Letter frequencies:\n");
+
+    for(i=0;i<26;i++)
+        if(f[i])
+            printf("%c = %d\n",'A'+i,f[i]);
+
+    printf("Frequency analysis alone may not uniquely decrypt text.\n");
+    return 0;
+}
