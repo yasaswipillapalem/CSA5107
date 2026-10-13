@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[500];
+    int freq[26]={0},i;
+
+    printf("Enter ciphertext: ");
+    fgets(s,sizeof(s),stdin);
+
+    for(i=0;s[i];i++)
+        if(isalpha(s[i]))
+            freq[toupper(s[i])-'A']++;
+
+    for(i=0;i<26;i++)
+        printf("%c : %d\n",'A'+i,freq[i]);
+
+    printf("Use frequency analysis to guess plaintext.\n");
+    return 0;
+}
