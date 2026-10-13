@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int main() {
+    char s[100];
+    int key[] = {9,0,1,7,23,15,21,14,11,11,2,8,9};
+    int i;
+
+    printf("Enter plaintext: ");
+    fgets(s, sizeof(s), stdin);
+
+    for (i=0; s[i] && i<13; i++)
+        if (isalpha(s[i]))
+            s[i] = (toupper(s[i])-'A'+key[i])%26+'A';
+
+    printf("Ciphertext: %s",s);
+    return 0;
+}
