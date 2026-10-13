@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char s[500];
+    int a[] = {1,3,5,7,9,11,15,17,19,21,23,25};
+    int i, j, k, inv, p;
+
+    printf("Enter ciphertext: ");
+    fgets(s, sizeof(s), stdin);
+
+    for (i = 0; i < 12; i++) {
+        for (j = 1; j < 26; j++)
+            if ((a[i] * j) % 26 == 1) inv = j;
+
+        for (k = 0; k < 26; k++) {
+            printf("a=%d b=%d: ", a[i], k);
+            for (j = 0; s[j]; j++) {
+                if (isalpha(s[j])) {
+                    p = (inv * (toupper(s[j])-'A'-k+26))%26;
+                    putchar(p+'A');
+                } else putchar(s[j]);
+            }
+        }
+    }
+    return 0;
+}
