@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char text[300];
+    int f[26]={0},i;
+
+    printf("Enter ciphertext: ");
+    fgets(text,sizeof(text),stdin);
+
+    for(i=0;text[i];i++)
+        if(isalpha(text[i]))
+            f[toupper(text[i])-'A']++;
+
+    printf("Letter frequencies:\n");
+    for(i=0;i<26;i++)
+        if(f[i])
+            printf("%c = %d\n",'A'+i,f[i]);
+
+    printf("Use frequency patterns to estimate plaintext.\n");
+    return 0;
+}
