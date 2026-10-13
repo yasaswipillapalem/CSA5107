@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main() {
+    printf("CBC mode using 3DES\n");
+    printf("Security: 3DES is stronger than single DES,\n");
+    printf("but is now considered legacy.\n");
+    printf("Performance: 3DES is slower than DES.\n");
+    printf("Modern recommendation: AES-GCM.\n");
+    return 0;
+}
