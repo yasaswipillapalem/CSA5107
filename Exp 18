@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    int round;
+
+    printf("DES subkey generation schedule\n");
+    for(round=1;round<=16;round++)
+        printf("Round %2d: Generate 48-bit subkey K%d\n",
+               round,round);
+
+    return 0;
+}
